@@ -14,15 +14,6 @@ struct Person {
     var fullName: String {
         name + " " + surname
     }
-    /*
-    let name = DataStore().names.randomElement() ?? ""
-    let surname = DataStore().surnames.randomElement() ?? ""
-    let phone = DataStore().phones.randomElement() ?? ""
-    let email = DataStore().emails.randomElement() ?? ""
-    */
-    var rows: [String] {
-        [phone + email]
-    }
     
     static func getPersonsInCount(of int: Int) -> [Person] {
         let names = DataStore().names.shuffled()
