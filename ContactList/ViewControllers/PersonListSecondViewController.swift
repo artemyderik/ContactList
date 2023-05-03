@@ -9,7 +9,7 @@ import UIKit
 
 class PersonListSecondViewController: UITableViewController {
     
-    var persons = Person.getPersonsInCount(of: 9)
+    var persons = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

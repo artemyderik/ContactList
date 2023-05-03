@@ -9,10 +9,15 @@ import UIKit
 
 class FirstNavigationController: UINavigationController {
     
-    var persons = Person.getPersonsInCount(of: 9)
+    var persons = [Person]()
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let firstVC = segue.destination as? PersonListFirstViewController else { return }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setPersons()
+    }
+    
+    private func setPersons() {
+        guard let firstVC = topViewController as? PersonListFirstViewController else { return }
         firstVC.persons = persons
     }
 }

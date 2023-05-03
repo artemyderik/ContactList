@@ -9,10 +9,15 @@ import UIKit
 
 class SecondNavigationController: UINavigationController {
     
-    var persons = Person.getPersonsInCount(of: 9)
+    var persons = [Person]()
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let secondVC = segue.destination as? PersonListSecondViewController else { return }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setPersons()
+    }
+    
+    private func setPersons() {
+        guard let secondVC = topViewController as? PersonListSecondViewController else { return }
         secondVC.persons = persons
     }
 }
