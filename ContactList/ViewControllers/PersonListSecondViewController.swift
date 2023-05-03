@@ -26,11 +26,7 @@ class PersonListSecondViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        [persons.first?.email, persons.last?.phone].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +44,7 @@ class PersonListSecondViewController: UITableViewController {
             content.text = person.email
             content.image = UIImage(systemName: "tray")
         }
-        
+        cell.selectionStyle = .none
         cell.contentConfiguration = content
         return cell
     }
